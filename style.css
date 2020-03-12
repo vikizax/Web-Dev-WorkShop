@@ -1,0 +1,304 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  outline-color: rgba(253, 1, 85, 0.952);
+}
+
+header {
+  display: flex;
+  height: 10vh;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+}
+
+.logo-container,
+.nav-links,
+.cart {
+  display: flex;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  font-weight: 400;
+  margin: 5px;
+}
+
+nav {
+  flex: 2;
+}
+
+.nav-links {
+  justify-content: space-around;
+  list-style: none;
+}
+
+.nav-link {
+  color: #5f5f79;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 20px;
+  height: 3px;
+  background-color: #5f5f79;
+  margin: 5px 5px 5px 12px;
+  transition: all 0.3s ease;
+}
+
+.cart {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.presentation {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.introduction {
+  flex: 1;
+}
+
+.intro-text h1 {
+  font-size: 44px;
+  font-weight: 500;
+  background: linear-gradient(to right, #494964, #6f6f89);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro-text p {
+  margin-top: 5px;
+  font-size: 22px;
+  color: #585772;
+}
+
+.cta {
+  padding: 50px 0px 0px 0px;
+}
+
+.cta-select {
+  border: 2px solid #c36cbb;
+  background: transparent;
+  color: #c36cbb;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cta-add {
+  border: none;
+  background: #c36cbb;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  margin: 30px 0px 0px 30px;
+}
+
+.cover {
+  flex: 1;
+  height: 60vh;
+}
+
+.cover img {
+  height: 100%;
+  filter: drop-shadow(0px 5px 3px black);
+  animation: drop 1.5s ease;
+}
+
+.big-circle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+  opacity: 0.5;
+  height: 80%;
+}
+
+.mid-circle {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  z-index: -1;
+  opacity: 0.4;
+  height: 60%;
+}
+
+.small-circle {
+  position: absolute;
+  bottom: 0%;
+  left: 20px;
+  z-index: -1;
+}
+
+.laptop-select {
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  right: 20%;
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cta-add {
+    margin: 5px 0px 0px 0px;
+  }
+
+  .cover {
+    display: flex;
+    align-content: center;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 90vh;
+    top: 10vh;
+    background-color: rgba(95, 95, 121, 0.9);
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+  }
+
+  .nav-links li {
+    margin-top: 40px;
+    opacity: 0;
+  }
+
+  .nav-link {
+    color: white;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .presentation {
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .introduction {
+    margin-top: 5vh;
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 30px;
+  }
+
+  .intro-text p {
+    font-size: 18px;
+  }
+
+  .cta {
+    padding: 10px 0px 0px 0px;
+  }
+
+  .laptop-select {
+    bottom: 5%;
+    right: 50%;
+    width: 50%;
+    transform: translate(50%, 5%);
+  }
+
+  .cover {
+    display: flex;
+    align-items: center;
+  }
+
+  .cover img {
+    height: 80%;
+  }
+
+  .big-circle,
+  .mid-circle,
+  .small-circle {
+    opacity: 0.2;
+  }
+
+  .small-circle {
+    display: none;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
